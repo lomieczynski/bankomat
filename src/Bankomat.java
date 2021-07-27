@@ -15,27 +15,27 @@ public class Bankomat {
 
         System.out.println("Włóż kartę (podaj 3-literowy kod): ");
         id = scanner.next();
-
+        System.out.println("Twój stan konta to: " + karta1.getSumkonta() + " zł");
         while (y==0){
         if (id.equals(karta1.getIdkarty())){
-            System.out.println("Twój stan konta to: " + karta1.getSumkonta() + " zł");
+
             System.out.println("Wpisz WPLATA lub WYPLATA: ");
             crb = scanner.next();
             if (crb.equals(wplac))
             {System.out.println("Podaj kwotę, którą chcesz wpłacić: ");
                x = scanner.nextInt();
-                int stan = x + karta1.getSumkonta();
-                System.out.println("Obecny stan konta to: " + stan);
+                karta1.setSumkonta(karta1.getSumkonta() + x);
+                System.out.println("Obecny stan konta to: " + karta1.getSumkonta());
 
             }
 
             else if (crb.equals(wyplac))
                 {System.out.println("Podaj kwotę, którą chcesz wypłacić: ");
                     x = scanner.nextInt();
-                    int stan = karta1.getSumkonta() - x;
+
                     if (x<= karta1.getSumkonta())
-                    {
-                    System.out.println("Obecny stan konta to: " + stan + " zł");
+                    { karta1.setSumkonta(karta1.getSumkonta() - x);
+                    System.out.println("Obecny stan konta to: " + karta1.getSumkonta() + " zł");
                     }
                     else
                     System.out.println("Operacja niemożliwa. Nie masz tyle pieniędzy na koncie.");}
