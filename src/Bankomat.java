@@ -15,10 +15,10 @@ public class Bankomat {
 
         System.out.println("Włóż kartę (podaj 3-literowy kod): ");
         id = scanner.next();
-
+        System.out.println("Twój stan konta to: " + karta1.getSumkonta() + " zł");
         while (y==0){
         if (id.equals(karta1.getIdkarty())){
-            System.out.println("Twój stan konta to: " + karta1.getSumkonta() + " zł");
+
             System.out.println("Wpisz WPLATA lub WYPLATA: ");
             crb = scanner.next();
             if (crb.equals(wplac))
